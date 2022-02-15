@@ -167,10 +167,9 @@ Resources:
     Properties:
       CorsConfiguration:
         CorsRules:
-          - AllowedHeaders: '*'
-            AllowedMethods: 'PUT'
-            AllowedOrigins: '*'
-            ExposedHeaders: '*'
+          - AllowedHeaders: ['*']
+            AllowedMethods: ['PUT']
+            AllowedOrigins: ['*']
 ```
 
 </details>
