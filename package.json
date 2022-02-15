@@ -1,0 +1,17 @@
+{
+  "name": "workshop-cloud-native",
+  "version": "1.0.0",
+  "description": "",
+  "main": "hello_world.js",
+  "scripts": {
+    "deploy": "sls deploy",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "aws-sdk": "^2.1064.0",
+    "serverless": "^2.72.1",
+    "serverless-ignore": "^0.2.1"
+  }
+}

@@ -1,0 +1,34 @@
+service: workshop-<name>
+
+# This is config for the Serverless framework.
+# It will set the default runtime for Lambda for example.
+provider:
+  name: aws
+  runtime: nodejs14.x
+  stage: dev
+  region: eu-west-1
+  lambdaHashingVersion: 20201221
+  httpApi:
+    cors: true
+
+# This is config for AWS IAM. It's basically access management to define
+# which services can do which actions. This block defines that your Lambda
+# can read and write from a database and store images in storage.
+  iam:
+    role:
+      name: "${self:service}"
+      path: /
+      statements:
+        - Effect: 'Allow'
+          Resource: '*'
+          Action:
+            - 'dynamodb:PutItem'
+            - 'dynamodb:Scan'
+        - Effect: 'Allow'
+          Resource: '*'
+          Action: 's3:PutObject'
+
+# Your Lambda functions are defined here.
+functions:
+  helloWorld:
+    handler: code/hello_world.handler
